@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<head>
+	<title>Shadowsocks QR code generator</title>
+	<script type="text/javascript" src="https://raw.githubusercontent.com/davidshimjs/qrcodejs/master/qrcode.min.js"></script>
+	<script type="text/javascript" src="main.js"></script>
+	<style>
+	div img {
+		display: block;
+    	margin-left: auto;
+    	margin-right: auto;
+	}
+	.center {
+		display: block;
+    	margin-left: auto;
+    	margin-right: auto;
+	}
+	.myButton {
+		background-color:#44c767;
+		border:2px solid #18ab29;
+		display:block;
+		cursor:pointer;
+		color:#ffffff;
+		font-family:arial;
+		font-size:17px;
+		padding:8px 29px;
+		text-decoration:none;
+		text-shadow:0px 1px 0px #2f6627;
+	}
+	.myButton:hover {
+		background-color:#5cbf2a;
+	}
+	.myButton:active {
+		position:relative;
+		top:1px;
+	}
+	</style>
+</head>
+<body>
+	<textarea id="config" class="center" rows="10" cols="60">
+	{
+		"server":"paste",
+		"server_port":60000,
+		"local_port":60000,
+		"password":"your shadowsocks config in here",
+		"timeout":600,
+		"method":"aes-256-cfb"
+	}
+	</textarea> 
+	<br />
+	<input id="generatecode" type="button" class="myButton center" value="Generate QR Code"></input>
+	<br /><br />
+	<div id="qrcode"></div>
+</body>
